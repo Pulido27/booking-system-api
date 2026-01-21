@@ -2,6 +2,9 @@
   "name": "booking_system_api",
   "version": "1.0.0",
   "type:": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
@@ -9,24 +12,29 @@
     "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["booking", "appointments", "typescript", "prisma"],
+  "keywords": [
+    "booking",
+    "appointments",
+    "typescript",
+    "prisma"
+  ],
   "author": "Cristian Pulido",
   "license": "ISC",
   "description": "Full-stack booking system with TypeScript, Prisma, PostgreSQL",
-
   "dependencies": {
+    "@prisma/client": "^7.3.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3"
   },
-
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.0.9",
+    "prisma": "^7.3.0",
     "typescript": "^5.9.3"
   }
 }
