@@ -16,8 +16,8 @@ Thumbs.db
 .idea/
 
 # Logs
+logs/
 *.Logs
 npm-debug.log*
-
 
 /src/generated/prisma
