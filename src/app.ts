@@ -3,6 +3,7 @@ import cors from 'cors';
 import { errorHandler } from './middlewares/error.middleware.js';
 import { notFoundHandler } from './middlewares/notFound.middleware.js';
 import logger from './config/logger.js';
+import authRoutes from './modules/auth/auth.routes.js';
 
 const app: Application = express();
 
@@ -13,15 +14,20 @@ app.use(express.urlencoded({ extended: true }));
 
 logger.info('Initializin Booking System Api');
 
+//Healtchecker
 app.get('/', (req: Request, res: Response) => {
-    res.json({
+    res.status(200).json({
         success: true,
-        message: 'Booking System API',
-        version: '1.0.0',
+        message: 'Booking System API v1',
         timeStamp: new Date().toISOString()
     });
 });
 
+//Routes
+app.use('/api/v1/auth', authRoutes);
+
+
+//Errors middlewares
 app.use(notFoundHandler);
 
 app.use(errorHandler);
