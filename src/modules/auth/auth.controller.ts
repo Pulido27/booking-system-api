@@ -34,6 +34,15 @@ class AuthController {
             data: result,
         });
     });
+
+    me = catchAsync(async (req: Request, res: Response) => {
+        res.status(200).json({
+            status: 'success',
+            data: {
+                user:req.user,
+            },
+        });
+    });
 }
 
 export const authController = new AuthController();

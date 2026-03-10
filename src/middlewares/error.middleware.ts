@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { AppError } from '../utils/AppError.js';
 import logger from '../config/logger.js';
-import { success, ZodError } from 'zod';
+import { ZodError } from 'zod';
 import { Prisma } from '../generated/prisma/client.js'
 
 export const errorHandler = (
@@ -10,7 +10,6 @@ export const errorHandler = (
     res: Response,
     next: NextFunction,
 ) => {
-
     // Zod validation error handling
     if (err instanceof ZodError) {
         logger.error({
@@ -20,7 +19,7 @@ export const errorHandler = (
             },
             req: {
                 method: req.method,
-                url: req.url,
+                url: req.originalUrl,
                 ip: req.ip,
             },
         }, 'Validation failed');

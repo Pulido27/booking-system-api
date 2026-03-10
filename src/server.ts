@@ -43,7 +43,7 @@ process.on('unhandledRejection', (reason: Error) => {
 process.on('uncaughtException', (reason: Error) => {
 
     logger.error({ err: reason}, 'uncaugh Exception');
-    gracefulShutdonw();
+    gracefulShutdown();
 
 })
 */
@@ -61,6 +61,11 @@ process.on('SIGINT', async() => {
 });
 
 function gracefulShutdown() {
+
+    if (!server) {
+        process.exit(1)
+    }
+
     server.close(async() => {
         logger.info('HTTP server close');
         
@@ -73,4 +78,10 @@ function gracefulShutdown() {
             process.exit(1);
         }
     })
+
+    // Force shutdown after timeout
+    setTimeout(() => {
+        logger.error('Force shutdown after timeout')
+        process.exit(1)
+    }, 10000)
 }

@@ -21,5 +21,24 @@ model User {
   role         Role     @default(CLIENT)
   createdAt    DateTime @default(now()) @map("created_at")
 
+  services     Service[]
+
   @@map("users")
+}
+
+model Service {
+  id            String    @id @default(uuid())
+  name          String    
+  description   String?
+  price         Float
+  duration      Int       //minutes
+  isActive      Boolean   @default(true) @map("is_active")
+  createdAt     DateTime  @default(now()) @map("created_At")
+  updateAt      DateTime  @updatedAt @map("updaed_at")
+
+  // Relation : A service belongs to a provider (user)
+  providerId    String    @map("provider_id")
+  provider      User      @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@map("services")
 }
