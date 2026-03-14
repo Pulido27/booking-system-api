@@ -4,6 +4,7 @@ import { errorHandler } from './middlewares/error.middleware.js';
 import { notFoundHandler } from './middlewares/notFound.middleware.js';
 import logger from './config/logger.js';
 import authRoutes from './modules/auth/auth.routes.js';
+import serviceRoutes from './modules/services/service.routes.js';
 
 const app: Application = express();
 
@@ -27,6 +28,7 @@ app.get('/', (req: Request, res: Response) => {
 //Routes
 app.use('/api/v1/auth', authRoutes);
 
+app.use('/api/v1/services', serviceRoutes);
 
 //Errors middlewares
 app.use(notFoundHandler);

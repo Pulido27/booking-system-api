@@ -9,13 +9,13 @@ export class AuthService {
     async register (data: RegisterInput) {
 
         //Verify if the user exist already
-        const existingUser = await prisma.user.findUnique({
-            where: { email: data.email },
-        });
+            const existingUser = await prisma.user.findUnique({
+                where: { email: data.email },
+            });
 
-        if (existingUser) {
-            throw new UnauthorizedError('El email ya esta registrado')
-        }
+            if (existingUser) {
+                throw new UnauthorizedError('El email ya esta registrado')
+            }
 
         // Hash password
         const passwordHash = await hashPassword(data.password);

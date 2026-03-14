@@ -12,10 +12,12 @@ export const createServiceSchema = z.object({
         .trim()
         .optional(),
     price: z
+        .coerce
         .number()
         .positive('El precio debe ser mayor a 9')
         .max(1000000, 'El precio es demasiado alto'),
     duration: z
+        .coerce
         .number()
         .int('La duración deber ser un número entero')
         .min(15, 'La duración mínima es 15 minutos')
