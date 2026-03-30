@@ -3,10 +3,6 @@ import { serviceService } from "./service.service.js";
 import { createServiceSchema, updateServiceSchema } from "./service.schemas.js";
 import { catchAsync } from "../../utils/catchAsync.js";
 
-interface ServiceParams {
-  id: string;
-}
-
 class ServiceController {
 
     create = catchAsync(async (req: Request, res: Response) =>  {

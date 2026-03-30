@@ -3,8 +3,10 @@ import cors from 'cors';
 import { errorHandler } from './middlewares/error.middleware.js';
 import { notFoundHandler } from './middlewares/notFound.middleware.js';
 import logger from './config/logger.js';
+
 import authRoutes from './modules/auth/auth.routes.js';
 import serviceRoutes from './modules/services/service.routes.js';
+import timeSlotRoutes from './modules/timeslots/timeslot.routes.js';
 
 const app: Application = express();
 
@@ -29,6 +31,8 @@ app.get('/', (req: Request, res: Response) => {
 app.use('/api/v1/auth', authRoutes);
 
 app.use('/api/v1/services', serviceRoutes);
+
+app.use('/api/v1/timeslots', timeSlotRoutes);
 
 //Errors middlewares
 app.use(notFoundHandler);

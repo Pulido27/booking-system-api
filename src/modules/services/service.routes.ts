@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { serviceController } from './service.controller.js';
 import { authenticate } from '../../middlewares/auth.middleware.js';
 import { requireRole } from '../../middlewares/role.middleware.js';
-import de from 'zod/v4/locales/de.js';
+
 
 const router = Router();
 
