@@ -7,6 +7,7 @@ import logger from './config/logger.js';
 import authRoutes from './modules/auth/auth.routes.js';
 import serviceRoutes from './modules/services/service.routes.js';
 import timeSlotRoutes from './modules/timeslots/timeslot.routes.js';
+import appointmentRoutes from './modules/appointments/appointment.routes.js';
 
 const app: Application = express();
 
@@ -33,6 +34,8 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/services', serviceRoutes);
 
 app.use('/api/v1/timeslots', timeSlotRoutes);
+
+app.use('/api/v1/appointments', appointmentRoutes);
 
 //Errors middlewares
 app.use(notFoundHandler);
