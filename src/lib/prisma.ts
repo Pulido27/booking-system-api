@@ -3,12 +3,14 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from 'pg';
 import { env } from "../config/env.js"
 
+
 const pool = new Pool({
-    connectionString: env.DATABASE_URL!,
-    max: 20,
-    min: 0,
-    idleTimeoutMillis: 30000,
-    connectionTimeoutMillis: 2000,
+  connectionString: env.DATABASE_URL!,
+  ssl: env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
+  max: 20,
+  min: 0,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 10000,
 });
 
 const adapter = new PrismaPg(pool);

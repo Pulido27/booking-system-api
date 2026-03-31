@@ -39,7 +39,7 @@ app.use('/api/v1/appointments', appointmentRoutes);
 
 // swagger
 import swaggerUi from "swagger-ui-express";
-import swaggerSpec from "./swagger";
+import swaggerSpec from "./swagger.js";
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 

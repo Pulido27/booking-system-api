@@ -12,9 +12,7 @@ const options = {
     },
     servers: [
       {
-        url: isProduction
-          ? "https://TU-URL-DEPLOY.com"
-          : "http://localhost:3000",
+        url: process.env.API_URL || "http://localhost:3000",
       },
     ],
 
