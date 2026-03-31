@@ -8,7 +8,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/v1/services:
+ * /services:
  *   get:
  *     summary: Obtener todos los servicios
  *     tags: [Services]
@@ -20,7 +20,7 @@ router.get('/', serviceController.findAll);
 
 /**
  * @swagger
- * /api/v1/services/{id}:
+ * /services/{id}:
  *   get:
  *     summary: Obtener un servicio por ID
  *     tags: [Services]
@@ -40,7 +40,7 @@ router.get('/:id', serviceController.findById);
 
 /**
  * @swagger
- * /api/v1/services:
+ * /services:
  *   post:
  *     summary: Crear un nuevo servicio
  *     tags: [Services]
@@ -79,7 +79,7 @@ router.post('/', authenticate, requireRole(['ADMIN', 'PROVIDER']), serviceContro
 
 /**
  * @swagger
- * /api/v1/services/{id}:
+ * /services/{id}:
  *   put:
  *     summary: Actualizar un servicio
  *     tags: [Services]
@@ -112,7 +112,7 @@ router.put('/:id', authenticate, requireRole(['ADMIN', 'PROVIDER']), serviceCont
 
 /**
  * @swagger
- * /api/v1/services/{id}:
+ * /services/{id}:
  *   delete:
  *     summary: Eliminar un servicio
  *     tags: [Services]

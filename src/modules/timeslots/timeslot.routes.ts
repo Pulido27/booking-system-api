@@ -7,7 +7,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/v1/timeslots:
+ * /timeslots:
  *   get:
  *     summary: Obtener todos los time slots disponibles
  *     tags: [TimeSlots]
@@ -19,7 +19,7 @@ router.get('/', timeSlotController.findAll);
 
 /**
  * @swagger
- * /api/v1/timeslots/provider/{providerId}:
+ * /timeslots/provider/{providerId}:
  *   get:
  *     summary: Obtener time slots de un provider
  *     tags: [TimeSlots]
@@ -37,7 +37,7 @@ router.get('/provider/:providerId', timeSlotController.findByProvider);
 
 /**
  * @swagger
- * /api/v1/timeslots/{id}:
+ * /timeslots/{id}:
  *   get:
  *     summary: Obtener un time slot por ID
  *     tags: [TimeSlots]
@@ -57,7 +57,7 @@ router.get('/:id', timeSlotController.findById);
 
 /**
  * @swagger
- * /api/v1/timeslots:
+ * /timeslots:
  *   post:
  *     summary: Crear disponibilidad (time slot)
  *     tags: [TimeSlots]
@@ -97,7 +97,7 @@ router.post(
 
 /**
  * @swagger
- * /api/v1/timeslots/{id}:
+ * /timeslots/{id}:
  *   delete:
  *     summary: Eliminar un time slot
  *     tags: [TimeSlots]

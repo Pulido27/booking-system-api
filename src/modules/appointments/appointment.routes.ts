@@ -10,7 +10,7 @@ router.use(authenticate);
 
 /**
  * @swagger
- * /api/v1/appointments:
+ * /appointments:
  *   post:
  *     summary: Crear una cita
  *     tags: [Appointments]
@@ -54,7 +54,7 @@ router.post(
 
 /**
  * @swagger
- * /api/v1/appointments:
+ * /appointments:
  *   get:
  *     summary: Obtener citas según el rol
  *     tags: [Appointments]
@@ -68,7 +68,7 @@ router.get('/', appointmentController.findAll);
 
 /**
  * @swagger
- * /api/v1/appointments/{id}:
+ * /appointments/{id}:
  *   get:
  *     summary: Obtener una cita por ID
  *     tags: [Appointments]
@@ -90,7 +90,7 @@ router.get('/:id', appointmentController.findById);
 
 /**
  * @swagger
- * /api/v1/appointments/{id}:
+ * /appointments/{id}:
  *   patch:
  *     summary: Actualizar estado de la cita
  *     tags: [Appointments]
@@ -120,7 +120,7 @@ router.patch('/:id', appointmentController.updateStatus);
 
 /**
  * @swagger
- * /api/v1/appointments/{id}:
+ * /appointments/{id}:
  *   delete:
  *     summary: Cancelar una cita
  *     tags: [Appointments]
