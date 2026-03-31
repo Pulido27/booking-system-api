@@ -1,3 +1,11 @@
+## Live API
+
+Base URL:
+https://booking-system-api-production-aec0.up.railway.app
+
+Swagger Docs: // Este es para brobar los endpoints
+https://booking-system-api-production-aec0.up.railway.app/api-docs
+
 # Booking System API
 
 Sistema de reservas y gestión de citas con autenticación basada en roles, diseñado para proveedores de servicios (barberos, dentistas, consultores, etc.).
