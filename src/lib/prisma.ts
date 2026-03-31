@@ -6,7 +6,7 @@ import { env } from "../config/env.js"
 
 const pool = new Pool({
   connectionString: env.DATABASE_URL!,
-  ssl: env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
+  //ssl: env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false, comento esta linea porque en rialways como la conexion esintern no ocupa ssl
   max: 20,
   min: 0,
   idleTimeoutMillis: 30000,
