@@ -8,8 +8,9 @@ const options = {
     info: {
       title: "Booking API",
       version: "1.0.0",
-      description: "Sistema de reservas con roles (ADMIN, PROVIDER, CLIENT)",
+      description: "Sistema de reservas con roles",
     },
+
     servers: [
       {
         url: process.env.API_URL || "http://localhost:3000",
@@ -33,7 +34,6 @@ const options = {
       },
     },
   },
-
 
   apis: isProduction
     ? ["./dist/modules/**/*.js"]
