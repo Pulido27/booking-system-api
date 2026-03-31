@@ -37,6 +37,12 @@ app.use('/api/v1/timeslots', timeSlotRoutes);
 
 app.use('/api/v1/appointments', appointmentRoutes);
 
+// swagger
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./swagger";
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 //Errors middlewares
 app.use(notFoundHandler);
 
